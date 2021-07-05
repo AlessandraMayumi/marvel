@@ -1,7 +1,10 @@
 package com.marvel.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +14,8 @@ import javax.persistence.OneToOne;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class StoryList {
 
@@ -24,7 +29,7 @@ public class StoryList {
 
     private String collectionUri;
 
-    @OneToMany(mappedBy = "storyList")
+    @OneToMany(mappedBy = "storyList", cascade = CascadeType.ALL)
     private List<StorySummary> items;
 
     @OneToOne
