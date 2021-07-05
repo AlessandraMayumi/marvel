@@ -1,14 +1,12 @@
 package com.marvel.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 public class SeriesListDto {
 
     private Integer available;
@@ -16,4 +14,3 @@ public class SeriesListDto {
     private String collectionUri;
     private List<SeriesSummaryDto> items;
 }
-

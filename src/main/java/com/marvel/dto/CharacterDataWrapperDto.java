@@ -1,12 +1,10 @@
 package com.marvel.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 public class CharacterDataWrapperDto {
     private Integer code;
     private String status;
@@ -16,4 +14,3 @@ public class CharacterDataWrapperDto {
     private CharacterDataContainerDto data;
     private String etag;
 }
-

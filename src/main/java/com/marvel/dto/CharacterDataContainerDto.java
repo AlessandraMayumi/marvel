@@ -1,14 +1,12 @@
 package com.marvel.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 public class CharacterDataContainerDto {
 
     private Integer offset;
@@ -17,4 +15,3 @@ public class CharacterDataContainerDto {
     private Integer count;
     private List<MarvelCharacterDto> results;
 }
-

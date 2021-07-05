@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Slf4j
+@Slf4j
 @Configuration
 public class LoadDatabase {
 
@@ -27,7 +27,7 @@ public class LoadDatabase {
         for (String query : queries) {
             jdbcTemplate.execute(query);
         }
-//        log.info("Preloading finished");
+        log.info("Preloading finished");
     }
 
     private static List<String> read() throws IOException {
