@@ -1,7 +1,10 @@
 package com.marvel.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +15,8 @@ import javax.persistence.OneToOne;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class CharacterDataContainer {
 
@@ -35,7 +40,7 @@ public class CharacterDataContainer {
     @JoinColumn(name = "character_data_wrapper_id")
     private CharacterDataWrapper wrapper;
 
-    @OneToMany(mappedBy = "data")
+    @OneToMany(mappedBy = "data", cascade = CascadeType.ALL)
     private List<MarvelCharacter> results;
 }
 
