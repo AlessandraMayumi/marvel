@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -32,6 +33,6 @@ public class ComicList {
     private MarvelCharacter character;
 
     @OneToMany(mappedBy = "comicList", cascade = CascadeType.ALL)
-    private List<ComicSummary> items;
+    private List<ComicSummary> items = new ArrayList<>();
 }
 
