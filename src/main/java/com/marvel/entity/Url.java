@@ -18,7 +18,6 @@ public class Url {
 
     @Id
     @GeneratedValue
-
     private Long id;
 
     private String type;

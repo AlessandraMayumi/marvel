@@ -27,7 +27,7 @@ public class SeriesList {
 
     private String collectionUri;
 
-    @OneToMany(mappedBy = "seriesList", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "seriesList",cascade = CascadeType.ALL)
     private List<SeriesSummary> items;
 
     @OneToOne
