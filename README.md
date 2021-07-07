@@ -1,1 +1,3 @@
 # marvel
+
+./mvnw clean install
