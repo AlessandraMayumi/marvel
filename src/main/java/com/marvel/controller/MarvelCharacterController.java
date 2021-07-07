@@ -4,9 +4,12 @@ import com.marvel.dto.MarvelCharacterDto;
 import com.marvel.entity.MarvelCharacter;
 import com.marvel.mapper.MarvelCharacterMapper;
 import com.marvel.repository.MarvelCharacterRepository;
+import com.marvel.specification.MarvelCharacterFilter;
+import com.marvel.specification.MarvelCharacterSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +29,9 @@ public class MarvelCharacterController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Page<MarvelCharacterDto> getAll(final Pageable pageable) {
-        return repository.findAll(pageable).map(mapper::toDto);
+    public Page<MarvelCharacterDto> getAll(final MarvelCharacterFilter filter, final Pageable pageable) {
+        final Specification<MarvelCharacter> specification = MarvelCharacterSpecification.criteria(filter);
+        return repository.findAll(specification, pageable).map(mapper::toDto);
     }
 }
 
